@@ -36,8 +36,8 @@ defaults
 
 frontend http-in
     bind *:80
-    # Redirect all HTTP traffic to HTTPS with 301
-    redirect scheme https code 301 if !{ ssl_fc }
+    # Redirect all HTTP traffic to HTTPS with 200
+    redirect scheme https code 200 if !{ ssl_fc }
     
     # For Let's Encrypt HTTP-01 challenges
     acl letsencrypt-acl path_beg /.well-known/acme-challenge/
